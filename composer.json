@@ -1,0 +1,26 @@
+{
+    "name": "ofi/mobilepulsa",
+    "description": "Mobilepulsa.net PHP Package by teguhrijanandi02@gmail.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Teguh Rijanandi",
+            "email": "teguhrijanandi02@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "filp/whoops": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "ofi\\mobilepulsa\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "ofi\\mobilepulsa\\": "src/"
+        }
+    }
+}
