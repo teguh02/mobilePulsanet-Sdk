@@ -69,6 +69,46 @@
             "install-path": "../filp/whoops"
         },
         {
+            "name": "ofi/deteksinohpindonesia",
+            "version": "v1.4",
+            "version_normalized": "1.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/teguh02/deteksinohpindonesia.git",
+                "reference": "34616829933bd6e05586b306bdbd44dc6bdf4282"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/teguh02/deteksinohpindonesia/zipball/34616829933bd6e05586b306bdbd44dc6bdf4282",
+                "reference": "34616829933bd6e05586b306bdbd44dc6bdf4282",
+                "shasum": ""
+            },
+            "time": "2020-11-26T09:34:39+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ofi\\deteksinohpindonesia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "teguh02",
+                    "email": "teguhrijanandi02@gmail.com"
+                }
+            ],
+            "description": "Package ini digunakan untuk mendeteksi otomatis jenis operator nomor hp Indonesia berdasarkan nomor Hp yang diinputkan",
+            "support": {
+                "issues": "https://github.com/teguh02/deteksinohpindonesia/issues",
+                "source": "https://github.com/teguh02/deteksinohpindonesia/tree/v1.4"
+            },
+            "install-path": "../ofi/deteksinohpindonesia"
+        },
+        {
             "name": "psr/log",
             "version": "1.1.3",
             "version_normalized": "1.1.3.0",

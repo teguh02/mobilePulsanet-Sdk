@@ -95,6 +95,161 @@ trait prepaid {
         ], '/v1/legacy/index');
     }
 
+    /**
+     * Auto Detect operator pricelist
+     * https://developer.mobilepulsa.net/documentation#api-Auto_Detect_Operator
+     */
+    public function autoDetectOperator()
+    {
+        return [
+            'data' => [
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa10000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 10000,
+                    'pulsa_code' => 'pulsa10000',
+                    'pulsa_price' =>	10000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa100000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 100000,
+                    'pulsa_code' => 'pulsa100000',
+                    'pulsa_price' =>	100000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa1000000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 1000000,
+                    'pulsa_code' => 'pulsa1000000',
+                    'pulsa_price' =>	1000000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa150000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 150000,
+                    'pulsa_code' => 'pulsa150000',
+                    'pulsa_price' =>	150000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa20000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 20000,
+                    'pulsa_code' => 'pulsa20000',
+                    'pulsa_price' =>	20000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa200000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 200000,
+                    'pulsa_code' => 'pulsa200000',
+                    'pulsa_price' =>	200000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa25000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 25000,
+                    'pulsa_code' => 'pulsa25000',
+                    'pulsa_price' =>	25000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa30000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 30000,
+                    'pulsa_code' => 'pulsa30000',
+                    'pulsa_price' =>	30000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa300000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 300000,
+                    'pulsa_code' => 'pulsa300000',
+                    'pulsa_price' =>	300000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa5000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 5000,
+                    'pulsa_code' => 'pulsa5000',
+                    'pulsa_price' =>	5000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa50000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 50000,
+                    'pulsa_code' => 'pulsa50000',
+                    'pulsa_price' =>	50000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],
+                
+                [
+                    'status' => 'active',
+                    'icon_url' => null,
+                    'pulsa_op' => 'pulsa500000',
+                    'pulsa_details' => '-',
+                    'masaaktif' => '0',
+                    'pulsa_nominal' => 500000,
+                    'pulsa_code' => 'pulsa500000',
+                    'pulsa_price' =>	500000,
+                    'pulsa_type' => 'pulsa_auto_detect_oprator'
+                ],                                     
+            ]
+        ];
+    }
+
     protected static function cekPrepaid()
     {
         if(self::$prepaid_status == false) {

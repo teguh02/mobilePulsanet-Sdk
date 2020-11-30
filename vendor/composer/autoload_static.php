@@ -10,6 +10,7 @@ class ComposerStaticInitc5001dd66fc892fbc4cdb54440a5301e
         'o' => 
         array (
             'ofi\\mobilepulsa\\' => 16,
+            'ofi\\deteksinohpindonesia\\' => 25,
         ),
         'W' => 
         array (
@@ -26,6 +27,10 @@ class ComposerStaticInitc5001dd66fc892fbc4cdb54440a5301e
         array (
             0 => __DIR__ . '/../..' . '/src',
             1 => __DIR__ . '/../..' . '/src',
+        ),
+        'ofi\\deteksinohpindonesia\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ofi/deteksinohpindonesia/src',
         ),
         'Whoops\\' => 
         array (

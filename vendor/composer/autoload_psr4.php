@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ofi\\mobilepulsa\\' => array($baseDir . '/src', $baseDir . '/src'),
+    'ofi\\deteksinohpindonesia\\' => array($vendorDir . '/ofi/deteksinohpindonesia/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
 );

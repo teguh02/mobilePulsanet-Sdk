@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5c5ccae91844afdb77eabd0a9f98272",
+    "content-hash": "22efdb87891f112a03d93e6a87fdb0dc",
     "packages": [
         {
             "name": "filp/whoops",
@@ -70,6 +70,43 @@
                 "source": "https://github.com/filp/whoops/tree/2.9.1"
             },
             "time": "2020-11-01T12:00:00+00:00"
+        },
+        {
+            "name": "ofi/deteksinohpindonesia",
+            "version": "v1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/teguh02/deteksinohpindonesia.git",
+                "reference": "34616829933bd6e05586b306bdbd44dc6bdf4282"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/teguh02/deteksinohpindonesia/zipball/34616829933bd6e05586b306bdbd44dc6bdf4282",
+                "reference": "34616829933bd6e05586b306bdbd44dc6bdf4282",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ofi\\deteksinohpindonesia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "teguh02",
+                    "email": "teguhrijanandi02@gmail.com"
+                }
+            ],
+            "description": "Package ini digunakan untuk mendeteksi otomatis jenis operator nomor hp Indonesia berdasarkan nomor Hp yang diinputkan",
+            "support": {
+                "issues": "https://github.com/teguh02/deteksinohpindonesia/issues",
+                "source": "https://github.com/teguh02/deteksinohpindonesia/tree/v1.4"
+            },
+            "time": "2020-11-26T09:34:39+00:00"
         },
         {
             "name": "psr/log",

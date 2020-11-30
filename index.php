@@ -3,6 +3,9 @@
 // import autoload
 include __DIR__ . '/vendor/autoload.php';
 
+// import package mobilepulsa
+use ofi\mobilepulsa\mobilepulsa;
+
 /**
  * Import class class contoh
  */
@@ -23,6 +26,10 @@ $prepaid = new prepaid;
 // print_r($prepaid->cekIdPemain());
 // print_r($prepaid->daftarServerGame());
 // print_r($prepaid->topUpPulsa());
-print_r($prepaid->topUpVoucherGame());
+// print_r($prepaid->topUpVoucherGame());
+// print_r($prepaid->autoDetectOperatorPriceList());
+
+// deteksi jenis operator nomor hp
+print_r(mobilepulsa::deteksiOperatorNoHp('08986642927'));
 
 echo "</pre>";

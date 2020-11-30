@@ -5,6 +5,7 @@ namespace ofi\mobilepulsa;
 require dirname(__DIR__) . '/vendor/autoload.php';
 use ofi\mobilepulsa\helper\checkBalance;
 use ofi\mobilepulsa\prepaid\prepaid;
+use ofi\deteksinohpindonesia\Client as deteksinohpindonesia;
 
 class mobilepulsa {
 
@@ -42,5 +43,16 @@ class mobilepulsa {
         // $whoops->pushHandler(new \Whoops\Handler\JsonResponseHandler);
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();
+    }
+
+    /**
+     * Deteksi jenis nomor hp
+     */
+    public static function deteksiOperatorNoHp($noHp)
+    {
+        $deteksi = new deteksinohpindonesia;
+        return [
+            'data' => $deteksi->detect($noHp)
+        ];
     }
 } 

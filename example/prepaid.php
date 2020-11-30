@@ -50,4 +50,10 @@ class prepaid {
         return $this->client->prepaid() -> topUpRequest('dragonnest180', '156378300|8483', $order_no);
     }
 
+    public function autoDetectOperatorPriceList()
+    {
+        // menampilkan daftar harga pada auto detect operator
+        return $this->client->prepaid() -> autoDetectOperator();
+    }
+
 }
