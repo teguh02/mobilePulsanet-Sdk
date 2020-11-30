@@ -30,6 +30,8 @@ class httpRequest extends mobilepulsa {
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             $fp = fopen($logs_path . DIRECTORY_SEPARATOR . 'errorlog.txt', 'a');
             fwrite($fp, "\n=========== ". date('d/m/Y H:i:s') ." ============\n");
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
