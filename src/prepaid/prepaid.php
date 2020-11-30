@@ -62,6 +62,39 @@ trait prepaid {
         ], '/v1/legacy/index');
     }
 
+    /**
+     * Top up request
+     * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
+     */
+    public function topUpRequest($pulsa_code, $hp, $ref_id)
+    {
+        self::cekPrepaid();
+
+        return httpRequest::post([
+            "commands"   => "topup",
+            "ref_id" => $ref_id,
+            "username"   => self::$username,
+            "hp" => $hp,
+            "pulsa_code"  => $pulsa_code,
+            'sign' => signGenerator::generate($ref_id)
+        ], '/v1/legacy/index');
+    }
+
+    /**
+     * Check transaction status
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry_Pre_Paid
+     */
+    public function checkStatus($ref_id)
+    {
+        self::cekPrepaid();
+        return httpRequest::post([
+            "commands"   => "inquiry",
+            "ref_id" => $ref_id,
+            "username"   => self::$username,
+            'sign' => signGenerator::generate($ref_id)
+        ], '/v1/legacy/index');
+    }
+
     protected static function cekPrepaid()
     {
         if(self::$prepaid_status == false) {

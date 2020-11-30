@@ -21,7 +21,7 @@ class prepaid {
 
     public function daftarHarga()
     {
-        return $this->client->prepaid() -> pricelist('pulsa', 'indosat');
+        return $this->client->prepaid() -> pricelist('game', 'dragon_nest_m_-_sea');
     }
 
     public function cekIdPemain()
@@ -34,6 +34,20 @@ class prepaid {
     {
         // cek daftar server game Dragon Nest (development mode)
         return $this->client->prepaid() -> gameServerList(142);
+    }
+
+    public function topUpPulsa()
+    {
+        // contoh top up pulsa xl 5 rb
+        $order_no = "order1";
+        return $this->client->prepaid() -> topUpRequest('xld5000', '0817777215', $order_no);
+    }
+
+    public function topUpVoucherGame()
+    {
+        // contoh top up voucher game dragon nest 180 Berlian (development mode)
+        $order_no = "order6"; // harus diisi berbeda beda per orderan
+        return $this->client->prepaid() -> topUpRequest('dragonnest180', '156378300|8483', $order_no);
     }
 
 }

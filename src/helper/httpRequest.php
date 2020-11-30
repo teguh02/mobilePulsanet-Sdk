@@ -32,13 +32,15 @@ class httpRequest extends mobilepulsa {
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            $fp = fopen($logs_path . DIRECTORY_SEPARATOR . 'errorlog.txt', 'a');
-            fwrite($fp, "\n=========== ". date('d/m/Y H:i:s') ." ============\n");
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt($ch, CURLOPT_STDERR, $fp);
             $data = json_decode(curl_exec($ch), 1);
 
             if(curl_errno($ch)) {   
+                $fp = fopen($logs_path . DIRECTORY_SEPARATOR . 'errorlog.txt', 'a');
+                fwrite($fp, "\n=========== Error At ". date('d/m/Y H:i:s') ." ============\n");
+                fwrite($fp, "> Server Status : \n");
+                curl_setopt($ch, CURLOPT_STDERR, $fp);
+                fwrite($fp, "> CURL Status : \n");
                 fwrite($fp, curl_error($ch) . ' - at ' . date('d - m - Y'));
                 throw new Exception(curl_error($ch));
             }

@@ -21,6 +21,8 @@ $prepaid = new prepaid;
 
 // print_r($prepaid->daftarHarga());
 // print_r($prepaid->cekIdPemain());
-print_r($prepaid->daftarServerGame());
+// print_r($prepaid->daftarServerGame());
+// print_r($prepaid->topUpPulsa());
+print_r($prepaid->topUpVoucherGame());
 
 echo "</pre>";
