@@ -30,4 +30,10 @@ class prepaid {
         return $this->client->prepaid() -> checkGameId('156378300|8483', 103);
     }
 
+    public function daftarServerGame()
+    {
+        // cek daftar server game mobile legend
+        return $this->client->prepaid() -> gameServerList(103);
+    }
+
 }

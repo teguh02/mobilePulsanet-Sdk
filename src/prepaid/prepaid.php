@@ -37,11 +37,27 @@ trait prepaid {
      */
     public function checkGameId($gameId, $gameCode)
     {
+        self::cekPrepaid();
         return httpRequest::post([
             "commands"   => "check-game-id",
             "username"   => self::$username,
             "game_code"  => $gameCode,
             "hp"         => $gameId,
+            'sign' => signGenerator::generate($gameCode)
+        ], '/v1/legacy/index');
+    }
+
+    /**
+     * Check server list from a game
+     * https://developer.mobilepulsa.net/documentation#api-Game_Server_List
+     */
+    public function gameServerList($gameCode)   
+    {
+        self::cekPrepaid();
+        return httpRequest::post([
+            "commands"   => "game-server-list",
+            "username"   => self::$username,
+            "game_code"  => $gameCode,
             'sign' => signGenerator::generate($gameCode)
         ], '/v1/legacy/index');
     }

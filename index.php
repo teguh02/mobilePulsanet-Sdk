@@ -20,6 +20,7 @@ $checkBalance = new checkBalance;
 $prepaid = new prepaid;
 
 // print_r($prepaid->daftarHarga());
-print_r($prepaid->cekIdPemain());
+// print_r($prepaid->cekIdPemain());
+print_r($prepaid->daftarServerGame());
 
 echo "</pre>";
