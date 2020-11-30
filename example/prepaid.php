@@ -32,8 +32,8 @@ class prepaid {
 
     public function daftarServerGame()
     {
-        // cek daftar server game mobile legend
-        return $this->client->prepaid() -> gameServerList(103);
+        // cek daftar server game Dragon Nest (development mode)
+        return $this->client->prepaid() -> gameServerList(142);
     }
 
 }
