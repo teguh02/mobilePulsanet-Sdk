@@ -3,24 +3,30 @@
 // import autoload
 include __DIR__ . '/vendor/autoload.php';
 
-// import package mobilepulsa
+// import package ofi\mobilepulsa
 use ofi\mobilepulsa\mobilepulsa;
 
 /**
- * Import class class contoh
+ * Import class class contoh (di dalam foder example)
  */
 include __DIR__ . '/example/checkBalance.php';
 include __DIR__ . '/example/prepaid.php';
+include __DIR__ . '/example/callbackSample.php';
 
 echo "<pre>";
 
-// untuk mengecek saldo
+// untuk mengecek saldo, pertama buat instance baru
+// dari class checkBalance
 $checkBalance = new checkBalance;
-
+// tampilkan hasilnya
 // print_r($checkBalance->cekSaldo());
 
 // @ prepaid section
+// Buat instance baru class prepaid
 $prepaid = new prepaid;
+
+// dan kamu bisa menampilkan hasilnya seperti ini
+// silahkan uncomment saja kode dibawah ini :)
 
 // print_r($prepaid->daftarHarga());
 // print_r($prepaid->cekIdPemain());
@@ -30,6 +36,15 @@ $prepaid = new prepaid;
 // print_r($prepaid->autoDetectOperatorPriceList());
 
 // deteksi jenis operator nomor hp
-print_r(mobilepulsa::deteksiOperatorNoHp('08986642927'));
+// print_r(mobilepulsa::deteksiOperatorNoHp('08986642927'));
+
+// tangkap semua response dari callback
+// pertama buat instance callbackSample terlebih dahulu
+$callbackSample = new callbackSample;
+// cetak hasil
+// print_r($callbackSample->tangkapCallback());
+
+// atau kamu bisa menyimpannya menjadi log txt
+print_r($callbackSample->simpanSebagaiLogTxt());
 
 echo "</pre>";

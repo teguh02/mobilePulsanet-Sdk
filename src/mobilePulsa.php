@@ -6,6 +6,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 use ofi\mobilepulsa\helper\checkBalance;
 use ofi\mobilepulsa\prepaid\prepaid;
 use ofi\deteksinohpindonesia\Client as deteksinohpindonesia;
+use ofi\mobilepulsa\helper\callback;
 
 class mobilepulsa {
 
@@ -14,7 +15,7 @@ class mobilepulsa {
     protected static $apikey;
     protected static $username;
 
-    use checkBalance, prepaid;
+    use checkBalance, prepaid, callback;
 
     public function __construct(String $username, String $apikey, String $env = 'development')
     {
@@ -34,6 +35,8 @@ class mobilepulsa {
         } else {
             self::$baseurl = 'https://testprepaid.mobilepulsa.net';
         }
+
+        date_default_timezone_set('Asia/Jakarta');
         
     }
 

@@ -2,11 +2,6 @@
 
 use ofi\mobilepulsa\mobilepulsa;
 
-/**
- * Refrence to
- * https://developer.mobilepulsa.net/documentation#api-Check_Balance
- */
-
 class checkBalance {
 
     protected $client;
@@ -19,6 +14,10 @@ class checkBalance {
         return $this->client;
     }
 
+    /**
+    * Refrensi
+    * https://developer.mobilepulsa.net/documentation#api-Check_Balance
+    */
     public function cekSaldo()
     {
         return $this->client -> checkBalance();

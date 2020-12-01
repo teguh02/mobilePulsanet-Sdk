@@ -20,6 +20,12 @@ class httpRequest extends mobilepulsa {
                 mkdir($logs_path);
             }
 
+            $gitignore = $logs_path . DIRECTORY_SEPARATOR . '.gitignore';
+            if(!file_exists($gitignore)) {
+                $gitignore_fp = fopen($gitignore, 'a');
+                fwrite($gitignore_fp, "*.txt");
+            }
+
             $json = json_encode($arrayData);
             $url =  self::$baseurl . $url;
 

@@ -3,7 +3,7 @@
 use ofi\mobilepulsa\mobilepulsa;
 
 /**
- * Refrence to
+ * Refrensi
  * https://developer.mobilepulsa.net/documentation#api-Pre_Paid_Flow
  */
 
@@ -19,23 +19,39 @@ class prepaid {
         return $this->client;
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Price_List
+     */
     public function daftarHarga()
     {
         return $this->client->prepaid() -> pricelist('game', 'dragon_nest_m_-_sea');
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Check_Game_ID
+     */
     public function cekIdPemain()
     {
         // contoh, mengecek id pemain free fire (dalam development mode)
         return $this->client->prepaid() -> checkGameId('156378300|8483', 103);
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Game_Server_List
+     */
     public function daftarServerGame()
     {
         // cek daftar server game Dragon Nest (development mode)
         return $this->client->prepaid() -> gameServerList(142);
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
+     */
     public function topUpPulsa()
     {
         // contoh top up pulsa xl 5 rb
@@ -43,6 +59,10 @@ class prepaid {
         return $this->client->prepaid() -> topUpRequest('xld5000', '0817777215', $order_no);
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
+     */
     public function topUpVoucherGame()
     {
         // contoh top up voucher game dragon nest 180 Berlian (development mode)
@@ -50,6 +70,10 @@ class prepaid {
         return $this->client->prepaid() -> topUpRequest('dragonnest180', '156378300|8483', $order_no);
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Auto_Detect_Operator
+     */
     public function autoDetectOperatorPriceList()
     {
         // menampilkan daftar harga pada auto detect operator
