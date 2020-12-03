@@ -15,6 +15,7 @@ class checkBalance {
     }
 
     /**
+     * Cek saldo saat ini
     * Refrensi
     * https://developer.mobilepulsa.net/documentation#api-Check_Balance
     */

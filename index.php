@@ -25,8 +25,9 @@ $checkBalance = new checkBalance;
 // Buat instance baru class prepaid
 $prepaid = new prepaid;
 
-// dan kamu bisa menampilkan hasilnya seperti ini
-// silahkan uncomment saja kode dibawah ini :)
+// kamu bisa menampilkan hasilnya seperti ini
+// silahkan uncomment saja kode dibawah ini 
+// supaya hasilnya muncul :)
 
 // print_r($prepaid->daftarHarga());
 // print_r($prepaid->cekIdPemain());

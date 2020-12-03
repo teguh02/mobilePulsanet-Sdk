@@ -20,6 +20,7 @@ class prepaid {
     }
 
     /**
+     * Daftar harga prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Price_List
      */
@@ -29,6 +30,7 @@ class prepaid {
     }
 
     /**
+     * Cek id pemain game prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Check_Game_ID
      */
@@ -39,6 +41,7 @@ class prepaid {
     }
 
     /**
+     * Cek daftar server game prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Game_Server_List
      */
@@ -49,6 +52,7 @@ class prepaid {
     }
 
     /**
+     * Isi pulsa prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
      */
@@ -60,6 +64,7 @@ class prepaid {
     }
 
     /**
+     * Top up voucher game prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
      */
@@ -71,6 +76,7 @@ class prepaid {
     }
 
     /**
+     * Top up voucher alfamart prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
      */
@@ -81,6 +87,8 @@ class prepaid {
     }
 
     /**
+     * Menampilkan pricelist yang ada di deteksi 
+     * operator otomatis prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Auto_Detect_Operator
      */
@@ -91,6 +99,7 @@ class prepaid {
     }
 
     /**
+     * Periksa status transaski prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Inquiry_Pre_Paid
      */
@@ -101,6 +110,7 @@ class prepaid {
     }
 
     /**
+     * Cek informasi pelanggan pln prepaid
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPlnToken
      */
@@ -110,6 +120,9 @@ class prepaid {
         return $this->client->prepaid() -> checkPlnSubscriber($subscriber_id);
     }
 
+    /**
+     * Tampilkan semua kode respon yang ada di prepaid
+     */
     public function kodeRespon()
     {
         return $this->client->prepaid() -> responseCode();

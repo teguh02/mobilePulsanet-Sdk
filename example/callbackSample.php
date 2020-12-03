@@ -30,11 +30,19 @@ class callbackSample {
         return $this->client;
     }
 
+    /**
+     * Tangkap pesan callback yang datang dari server mobilepulsa
+     * dan cetak hasilnya
+     */
     public function tangkapCallback()
     {
         return $this->client -> callback() -> catch();
     }
 
+    /**
+     * Tangkap pesan callback yang datang dari server mobilepulsa
+     * dan simpan menjadi file txt didalam folder logCallback
+     */
     public function simpanSebagaiLogTxt()
     {
         // simpan kedalam foler logCallback (yang ada didalam folder example ini)
