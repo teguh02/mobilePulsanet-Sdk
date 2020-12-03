@@ -72,6 +72,16 @@ class prepaid {
 
     /**
      * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Top_Up_Request
+     */
+    public function topUpVoucherAlfamart()
+    {
+        $order_no = "orderVoucherAlfamart50"; // harus diisi berbeda beda per orderan
+        return $this->client->prepaid() -> topUpRequest('alfamart50', '0817777215', $order_no);
+    }
+
+    /**
+     * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Auto_Detect_Operator
      */
     public function autoDetectOperatorPriceList()
@@ -80,4 +90,28 @@ class prepaid {
         return $this->client->prepaid() -> autoDetectOperator();
     }
 
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry_Pre_Paid
+     */
+    public function cekStatusTransaksi()
+    {
+        $order_id = "order001";
+        return $this->client->prepaid() -> checkStatus($order_id);
+    }
+
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPlnToken
+     */
+    public function cekPelangganPLN()
+    {
+        $subscriber_id = "12345678901";
+        return $this->client->prepaid() -> checkPlnSubscriber($subscriber_id);
+    }
+
+    public function kodeRespon()
+    {
+        return $this->client->prepaid() -> responseCode();
+    }
 }

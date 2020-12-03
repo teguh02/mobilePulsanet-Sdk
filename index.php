@@ -33,6 +33,7 @@ $prepaid = new prepaid;
 // print_r($prepaid->daftarServerGame());
 // print_r($prepaid->topUpPulsa());
 // print_r($prepaid->topUpVoucherGame());
+// print_r($prepaid->topUpVoucherAlfamart());
 // print_r($prepaid->autoDetectOperatorPriceList());
 
 // deteksi jenis operator nomor hp
@@ -45,6 +46,16 @@ $callbackSample = new callbackSample;
 // print_r($callbackSample->tangkapCallback());
 
 // atau kamu bisa menyimpannya menjadi log txt
-print_r($callbackSample->simpanSebagaiLogTxt());
+// print_r($callbackSample->simpanSebagaiLogTxt());
+
+// cek status transaksi
+// print_r($prepaid -> cekStatusTransaksi());
+
+// cek informasi pelanggan pln
+// print_r($prepaid->cekPelangganPLN());
+
+// mencetak prepaid response kode  
+print_r($prepaid->kodeRespon());
+
 
 echo "</pre>";
