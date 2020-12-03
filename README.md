@@ -6,6 +6,13 @@ Mobilepulsa.net PHP Package developed by myself
 
 This SDK are under Construction, for information you can contact me. Thank you
 
+# Instalation
+<ul>
+  <li>You can instal with composer by type <b><code>composer require ofi/mobilepulsa</code></b>
+  <li>Or you can download this repository and don't forget to import autoload file from composer (autoload.php) https://github.com/teguh02/mobilePulsanet-Sdk/blob/master/vendor/autoload.php</li>
+  <li>Enjoy it</li>
+</ul>
+
 # How to Use
 <ul>
   <li>This sdk refer to mobilepulsa docs https://developer.mobilepulsa.net/documentation</li>
