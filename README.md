@@ -1,5 +1,5 @@
 # mobilePulsa.net Sdk
-Mobilepulsa.net PHP Package developed by myself
+Mobilepulsa.net PHP Package developed by myself for mobilepulsa.net
 
 ![mobilepulsa](https://user-images.githubusercontent.com/43981051/100959809-ab731080-3551-11eb-8f3c-0b780f8c7cc0.png)
 ![cropped-Official-Logo](https://user-images.githubusercontent.com/43981051/100959992-fee55e80-3551-11eb-854a-8e04ae16c660.png)
