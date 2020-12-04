@@ -199,13 +199,26 @@ class postpaid {
     }
 
     /**
-     * Membuat tagihan Internet non telkom speedy dan Telkom PTSN
+     * Membuat tagihan Internet non telkom speedy dan Telkom PSTN
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryCBN
      */
     public function buatTagihanInternetNonTelkom()
     {
         $internet_registered_participant_number = "01927101";
         $product_code = "CBN";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_Internet($internet_registered_participant_number, $product_code);
+    }
+
+    /**
+     * Membuat tagihan Internet non telkom speedy dan Telkom PTSN
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTELKOMPSTN
+     */
+    public function buatTagihanInternetTelkomPSTN()
+    {
+        $internet_registered_participant_number = "6391601201   ";
+        $product_code = "TELKOMPSTN";
         return $this->client -> postpaid()
                              -> inquiry()
                              -> inq_Internet($internet_registered_participant_number, $product_code);
