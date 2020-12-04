@@ -217,11 +217,40 @@ class postpaid {
      */
     public function buatTagihanInternetTelkomPSTN()
     {
-        $internet_registered_participant_number = "6391601201   ";
+        $internet_registered_participant_number = "6391601201";
         $product_code = "TELKOMPSTN";
         return $this->client -> postpaid()
                              -> inquiry()
                              -> inq_Internet($internet_registered_participant_number, $product_code);
+    }
+
+    /**
+     * Membuat tagihan E samsat
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryESAMSAT
+     */
+    public function buatTagihanEsamsat()
+    {
+        /**
+         * Steps of payment STNK through West Java E-Samsat :
+         * A. By SMS Gateway
+         * Send SMS to 0811 211 9211 (SMS Gateway Server Dispenda Samsat Application). Send SMS with format : esamsat[space]no.rangka[space]NIK/KTP
+         * The content of replied SMS : Payment code, vehicle data and amount bill. Payment code will be the hp value on the mobilepulsa API.
+         * After getting replied text, taxpayer can pay the tax using mobilepulsa.
+         * Follow the payment steps according to documentation (inquiry then pay).
+         * Download receipt using mobilepulsa download receipt api.
+         * Then come to Samsat office to exchange payment receipt with SKPD in all closest Samsat office. This exchange is only valid for 30 days, if more than 30 days SKPD can't be printed.
+         * 
+         * B. By Samolnas Apps
+         * Download Samolnas Apps
+         * Register and get payment code
+         */
+
+        $E_samsat_payment_code = "9658548523568701";
+        $product_code = "ESAMSAT.JAWABARAT";
+        $nomor_identitas = "0212502110170100"; //Registered Identity Number
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_Esamsat($E_samsat_payment_code, $nomor_identitas, $product_code);
     }
 
 }

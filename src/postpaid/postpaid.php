@@ -226,6 +226,27 @@ trait postpaid {
         return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
     }
 
+    /**
+     * To make inquiry E Samsat
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryESAMSAT
+     */
+    public function inq_Esamsat($Esamsat_payment_code, $nomor_identitas, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $Esamsat_payment_code,
+            'ref_id' => $order_id,
+            'nomor_identitas' => $nomor_identitas,
+            'sign' => signGenerator::generate($order_id)
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {
