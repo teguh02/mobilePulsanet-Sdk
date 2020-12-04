@@ -77,6 +77,7 @@ $postpaid = new postpaid;
 // print_r($postpaid->buatTagihanPDAM());
 // print_r($postpaid->buatTagihanPLN());
 // print_r($postpaid->buatTagihanTvNontelkomVision());
-print_r($postpaid->buatTagihanTvtelkomVision());
+// print_r($postpaid->buatTagihanTvtelkomVision());
+print_r($postpaid->buatTagihanTelpPasca());
 
 echo "</pre>";

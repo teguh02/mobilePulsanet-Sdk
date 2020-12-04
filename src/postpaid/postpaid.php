@@ -186,6 +186,26 @@ trait postpaid {
         return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
     }
 
+    /**
+     * To make inquiry Telepon Pascabayar
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTeleponPascabayar
+     */
+    public function inq_TelpPasca($telepon_pasca_participant_number, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $telepon_pasca_participant_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id)
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {

@@ -147,7 +147,7 @@ class postpaid {
     }
 
     /**
-     * Membuat tagihan PDAM
+     * Membuat tagihan PLN
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPLNPOSTPAID
      */
     public function buatTagihanPLN()
@@ -156,7 +156,7 @@ class postpaid {
         $product_code = "PLNPOSTPAID";
         return $this->client -> postpaid()
                              -> inquiry()
-                             -> inq_PDAM($pln_participant_number, $product_code);
+                             -> inq_PLN($pln_participant_number, $product_code);
     }
 
     /**
@@ -169,7 +169,7 @@ class postpaid {
         $product_code = "TVBIG";
         return $this->client -> postpaid()
                              -> inquiry()
-                             -> inq_PDAM($tv_berlangganan_participant_number, $product_code);
+                             -> inq_Tv($tv_berlangganan_participant_number, $product_code);
     }
 
     /**
@@ -182,7 +182,20 @@ class postpaid {
         $product_code = "TVTLKMV";
         return $this->client -> postpaid()
                              -> inquiry()
-                             -> inq_PDAM($tv_berlangganan_participant_number, $product_code);
+                             -> inq_Tv($tv_berlangganan_participant_number, $product_code);
+    }
+
+    /**
+     * Membuat tagihan Telp Pasca
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTeleponPascabayar
+     */
+    public function buatTagihanTelpPasca()
+    {
+        $telepon_pasca_participant_number = "08991234501";
+        $product_code = "HPTHREE";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_TelpPasca($telepon_pasca_participant_number, $product_code);
     }
 
 }
