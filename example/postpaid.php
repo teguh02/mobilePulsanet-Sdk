@@ -146,4 +146,17 @@ class postpaid {
                              -> inq_PDAM($pdam_participant_number, $product_code);
     }
 
+    /**
+     * Membuat tagihan PDAM
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPLNPOSTPAID
+     */
+    public function buatTagihanPLN()
+    {
+        $pln_participant_number = "530000000001";
+        $product_code = "PLNPOSTPAID";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_PDAM($pln_participant_number, $product_code);
+    }
+
 }
