@@ -36,7 +36,9 @@ class callbackSample {
      */
     public function tangkapCallback()
     {
-        return $this->client -> callback() -> catch();
+        return $this->client 
+                    -> callback() 
+                    -> catch();
     }
 
     /**
@@ -48,7 +50,9 @@ class callbackSample {
         // simpan kedalam foler logCallback (yang ada didalam folder example ini)
         $path = dirname(__FILE__) . DIRECTORY_SEPARATOR .  'logCallback';
         // dan panggil method saveAsLog() untuk menyimpannya
-        return $this->client -> callback() -> saveAsLog($path);
+        return $this->client 
+                    -> callback()
+                    -> saveAsLog($path);
     }
 
 }

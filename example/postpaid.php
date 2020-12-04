@@ -51,7 +51,8 @@ class postpaid {
 
          $type = 'pdam';
          $province_for_pdam = 'jawa tengah';
-         return $this->client->postpaid() -> pricelistPasca($type, $province_for_pdam);
+         return $this->client->postpaid()  
+                            -> pricelistPasca($type, $province_for_pdam);
     }
 
     /**
@@ -85,11 +86,14 @@ class postpaid {
          */
 
          $type = 'bpjs';
-         return $this->client->postpaid() -> pricelistPasca($type);
+         return $this->client->postpaid() 
+                            -> pricelistPasca($type);
     }
 
+    // inquiry
+
     /**
-     * inquiry / membuat tagihan bpjs (misalkan ingin membayar langsung 2 bulan)
+     * membuat tagihan bpjs (misalkan ingin membayar langsung 2 bulan)
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryBpjs
      */
@@ -97,7 +101,23 @@ class postpaid {
     {
         $bpjs_participant_number = "8801234560001";
         $month = 2;
-        return $this->client->postpaid() -> inquiry() -> inq_BPJS($bpjs_participant_number, $month);
+        $product_code = "BPJS"; // product code
+        return $this->client->postpaid() 
+                            -> inquiry() 
+                            -> inq_BPJS($bpjs_participant_number, $product_code, $month);
+    }
+
+    /**
+     * Membuat tagihan gasNegara
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryGasNegara
+     */
+    public function buatTagihanGasNegara()
+    {
+        $gas_participant_number = "0110014601";
+        $product_code = "PGAS";
+        return $this->client->postpaid() 
+                            -> inquiry() 
+                            -> inq_GasNegara($gas_participant_number, $product_code);
     }
 
 }

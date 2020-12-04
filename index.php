@@ -72,6 +72,7 @@ $postpaid = new postpaid;
 
 // # membuat tagihan atau inquiry
 // bpjs
-print_r($postpaid->buatTagihanBPJS());
+// print_r($postpaid->buatTagihanBPJS());
+print_r($postpaid->buatTagihanGasNegara());
 
 echo "</pre>";

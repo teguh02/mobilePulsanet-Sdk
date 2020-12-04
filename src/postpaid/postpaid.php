@@ -67,8 +67,9 @@ trait postpaid {
 
     /**
      * To make inquiry bpjs
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryBpjs
      */
-    public function inq_BPJS($bpjs_participant_number, $month = 1, $ref_id = null)
+    public function inq_BPJS($bpjs_participant_number, $code, $month = 1, $ref_id = null)
     {
         self::cekPostpaid();
         self::cekinquiry();
@@ -76,11 +77,31 @@ trait postpaid {
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
-            'code' => "BPJS",
+            'code' => $code,
             'hp' => $bpjs_participant_number,
             'ref_id' => $order_id,
             'sign' => signGenerator::generate($order_id),
             'month' => $month
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
+    /**
+     * To make inquiry bpjs
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryBpjs
+     */
+    public function inq_GasNegara($gas_negara_participant_number, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $gas_negara_participant_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id)
         ];
         return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
     }

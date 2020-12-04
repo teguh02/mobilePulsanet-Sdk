@@ -26,7 +26,8 @@ class prepaid {
      */
     public function daftarHarga()
     {
-        return $this->client->prepaid() -> pricelist('game', 'dragon_nest_m_-_sea');
+        return $this->client->prepaid() 
+                            -> pricelist('game', 'dragon_nest_m_-_sea');
     }
 
     /**
@@ -37,7 +38,8 @@ class prepaid {
     public function cekIdPemain()
     {
         // contoh, mengecek id pemain free fire (dalam development mode)
-        return $this->client->prepaid() -> checkGameId('156378300|8483', 103);
+        return $this->client->prepaid() 
+                            -> checkGameId('156378300|8483', 103);
     }
 
     /**
@@ -48,7 +50,8 @@ class prepaid {
     public function daftarServerGame()
     {
         // cek daftar server game Dragon Nest (development mode)
-        return $this->client->prepaid() -> gameServerList(142);
+        return $this->client->prepaid() 
+                            -> gameServerList(142);
     }
 
     /**
@@ -60,7 +63,8 @@ class prepaid {
     {
         // contoh top up pulsa xl 5 rb
         $order_no = "order1";
-        return $this->client->prepaid() -> topUpRequest('xld5000', '0817777215', $order_no);
+        return $this->client->prepaid() 
+                            -> topUpRequest('xld5000', '0817777215', $order_no);
     }
 
     /**
@@ -72,7 +76,8 @@ class prepaid {
     {
         // contoh top up voucher game dragon nest 180 Berlian (development mode)
         $order_no = "order6"; // harus diisi berbeda beda per orderan
-        return $this->client->prepaid() -> topUpRequest('dragonnest180', '156378300|8483', $order_no);
+        return $this->client->prepaid() 
+                            -> topUpRequest('dragonnest180', '156378300|8483', $order_no);
     }
 
     /**
@@ -83,7 +88,8 @@ class prepaid {
     public function topUpVoucherAlfamart()
     {
         $order_no = "orderVoucherAlfamart50"; // harus diisi berbeda beda per orderan
-        return $this->client->prepaid() -> topUpRequest('alfamart50', '0817777215', $order_no);
+        return $this->client->prepaid() 
+                            -> topUpRequest('alfamart50', '0817777215', $order_no);
     }
 
     /**
@@ -95,7 +101,8 @@ class prepaid {
     public function autoDetectOperatorPriceList()
     {
         // menampilkan daftar harga pada auto detect operator
-        return $this->client->prepaid() -> autoDetectOperator();
+        return $this->client->prepaid() 
+                            -> autoDetectOperator();
     }
 
     /**
@@ -106,7 +113,8 @@ class prepaid {
     public function cekStatusTransaksi()
     {
         $order_id = "order001";
-        return $this->client->prepaid() -> checkStatus($order_id);
+        return $this->client->prepaid() 
+                            -> checkStatus($order_id);
     }
 
     /**
@@ -117,7 +125,8 @@ class prepaid {
     public function cekPelangganPLN()
     {
         $subscriber_id = "12345678901";
-        return $this->client->prepaid() -> checkPlnSubscriber($subscriber_id);
+        return $this->client->prepaid()    
+                            -> checkPlnSubscriber($subscriber_id);
     }
 
     /**
@@ -125,6 +134,7 @@ class prepaid {
      */
     public function kodeRespon()
     {
-        return $this->client->prepaid() -> responseCode();
+        return $this->client->prepaid() 
+                            -> responseCode();
     }
 }
