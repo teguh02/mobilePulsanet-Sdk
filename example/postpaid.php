@@ -246,7 +246,7 @@ class postpaid {
          */
 
         $E_samsat_payment_code = "9658548523568701";
-        $product_code = "ESAMSAT.JAWABARAT";
+        $product_code = "ESAMSAT.JATENG";
         $nomor_identitas = "0212502110170100"; //Registered Identity Number
         return $this->client -> postpaid()
                              -> inquiry()
