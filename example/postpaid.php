@@ -120,4 +120,17 @@ class postpaid {
                             -> inq_GasNegara($gas_participant_number, $product_code);
     }
 
+    /**
+     * Membuat tagihan MULTIFINANCE (NON FNADIRA)
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryGasNegara
+     */
+    public function buatTagihanMULTIFINANCENONFNADIRA()
+    {
+        $contract_number = "6391601201";
+        $product_code = "FNMEGA";
+        return $this->client->postpaid() 
+                            -> inquiry() 
+                            -> inq_GasNegara($contract_number, $product_code);
+    }
+
 }
