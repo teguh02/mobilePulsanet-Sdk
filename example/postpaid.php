@@ -130,7 +130,20 @@ class postpaid {
         $product_code = "FNMEGA";
         return $this->client->postpaid() 
                             -> inquiry() 
-                            -> inq_GasNegara($contract_number, $product_code);
+                            -> inq_Multifinance_Non_FNADIRA($contract_number, $product_code);
+    }
+
+    /**
+     * Membuat tagihan PDAM
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPDAM
+     */
+    public function buatTagihanPDAM()
+    {
+        $pdam_participant_number = "10202001";
+        $product_code = "PDAMKOTA.SURABAYA";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_PDAM($pdam_participant_number, $product_code);
     }
 
 }

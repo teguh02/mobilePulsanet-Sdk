@@ -87,7 +87,7 @@ trait postpaid {
     }
 
     /**
-     * To make gas negara
+     * To make inquiry gas negara
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryGasNegara
      */
     public function inq_GasNegara($gas_negara_participant_number, $code, $ref_id = null)
@@ -120,6 +120,26 @@ trait postpaid {
             'username' => self::$username,
             'code' => $code,
             'hp' => $contract_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id)
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
+    /**
+     * To make inquiry PDAM
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPDAM
+     */
+    public function inq_PDAM($pdam_participant_number, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $pdam_participant_number,
             'ref_id' => $order_id,
             'sign' => signGenerator::generate($order_id)
         ];
