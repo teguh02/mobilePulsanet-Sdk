@@ -147,7 +147,7 @@ trait postpaid {
     }
 
     /**
-     * To make inquiry PDAM
+     * To make inquiry PLN
      * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryPLNPOSTPAID
      */
     public function inq_PLN($pln_participant_number, $code, $ref_id = null)
@@ -160,6 +160,26 @@ trait postpaid {
             'username' => self::$username,
             'code' => $code,
             'hp' => $pln_participant_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id)
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
+    /**
+     * To make inquiry Tv Berlangganan
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTVBIG
+     */
+    public function inq_Tv($tv_berlangganan_participant_number, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $tv_berlangganan_participant_number,
             'ref_id' => $order_id,
             'sign' => signGenerator::generate($order_id)
         ];

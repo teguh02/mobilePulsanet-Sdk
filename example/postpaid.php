@@ -159,4 +159,17 @@ class postpaid {
                              -> inq_PDAM($pln_participant_number, $product_code);
     }
 
+    /**
+     * Membuat tagihan Tv Berlangganan non Telkom vision
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTVBIG
+     */
+    public function buatTagihanTvNontelkomVision()
+    {
+        $tv_berlangganan_participant_number = "1072161401";
+        $product_code = "TVBIG";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_PDAM($tv_berlangganan_participant_number, $product_code);
+    }
+
 }
