@@ -54,4 +54,38 @@ class postpaid {
          return $this->client->postpaid() -> pricelistPasca($type, $province_for_pdam);
     }
 
+    /**
+     * Refrensi daftar harga
+     * https://developer.mobilepulsa.net/documentation#pascaType
+     * https://developer.mobilepulsa.net/documentation#api-Price_List_post
+     */
+    public function daftarHargaBPJS()
+    {
+        /**
+         * Available Category type
+         * pdam
+         * bpjs
+         * internet
+         * pajak-kendaraan
+         * finance
+         * hp
+         * estate
+         * emoney
+         * kereta
+         * tv
+         * airline
+         * o2o
+         * pbb
+         * gas
+         * pajak-daerah
+         * pln
+         * pasar
+         * retribusi
+         * pendidikan
+         */
+
+         $type = 'bpjs';
+         return $this->client->postpaid() -> pricelistPasca($type);
+    }
+
 }

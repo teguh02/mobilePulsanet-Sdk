@@ -31,6 +31,7 @@ trait postpaid {
      */
     public function pricelistPasca($type, $province_for_pdam = null)
     {
+        self::cekPostpaid();
         // request array untuk pdam
         if(!empty($province_for_pdam)) {
             $request = [

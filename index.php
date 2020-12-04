@@ -64,7 +64,10 @@ $callbackSample = new callbackSample;
 // @ postpaid section
 $postpaid = new postpaid;
 
-// daftar harga
-print_r($postpaid -> daftarHarga());
+// daftar harga postpaid (daftar harga pln)
+// print_r($postpaid -> daftarHarga());
+
+// tampilkan daftar harga postpaid (daftar harga bpjs)
+print_r($postpaid -> daftarHargaBPJS());
 
 echo "</pre>";
