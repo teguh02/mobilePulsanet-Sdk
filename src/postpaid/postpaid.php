@@ -206,6 +206,26 @@ trait postpaid {
         return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
     }
 
+    /**
+     * To make inquiry Internet
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryCBN
+     */
+    public function inq_Internet($internet_registered_participant_number, $code, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => $code,
+            'hp' => $internet_registered_participant_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id)
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {

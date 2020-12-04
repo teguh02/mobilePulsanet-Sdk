@@ -198,4 +198,17 @@ class postpaid {
                              -> inq_TelpPasca($telepon_pasca_participant_number, $product_code);
     }
 
+    /**
+     * Membuat tagihan Internet non telkom speedy dan Telkom PTSN
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryCBN
+     */
+    public function buatTagihanInternetNonTelkom()
+    {
+        $internet_registered_participant_number = "01927101";
+        $product_code = "CBN";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_Internet($internet_registered_participant_number, $product_code);
+    }
+
 }
