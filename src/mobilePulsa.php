@@ -7,15 +7,17 @@ use ofi\mobilepulsa\helper\checkBalance;
 use ofi\mobilepulsa\prepaid\prepaid;
 use ofi\deteksinohpindonesia\Client as deteksinohpindonesia;
 use ofi\mobilepulsa\helper\callback;
+use ofi\mobilepulsa\postpaid\postpaid;
 
 class mobilepulsa {
 
     protected static $env;
     protected static $baseurl;
+    protected static $baseurl_postpaid;
     protected static $apikey;
     protected static $username;
 
-    use checkBalance, prepaid, callback;
+    use checkBalance, prepaid, callback, postpaid;
 
     public function __construct(String $username, String $apikey, String $env = 'development')
     {
@@ -32,8 +34,10 @@ class mobilepulsa {
 
         if($env != 'development' && $env == 'production') {
             self::$baseurl = 'https://api.mobilepulsa.net';
+            self::$baseurl_postpaid = "https://mobilepulsa.net";
         } else {
             self::$baseurl = 'https://testprepaid.mobilepulsa.net';
+            self::$baseurl_postpaid = "https://testpostpaid.mobilepulsa.net";
         }
 
         date_default_timezone_set('Asia/Jakarta');

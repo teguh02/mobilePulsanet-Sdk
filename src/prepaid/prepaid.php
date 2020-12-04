@@ -9,6 +9,9 @@ trait prepaid {
 
     protected static $prepaid_status = false;
 
+    /**
+     * To start prepaid chain method
+     */
     public function prepaid()
     {
         self::$prepaid_status = true;
@@ -69,7 +72,6 @@ trait prepaid {
     public function topUpRequest($pulsa_code, $hp, $ref_id)
     {
         self::cekPrepaid();
-
         return httpRequest::post([
             "commands"   => "topup",
             "ref_id" => $ref_id,
@@ -101,6 +103,7 @@ trait prepaid {
      */
     public function autoDetectOperator()
     {
+        self::cekPrepaid();
         return [
             'data' => [
                 [
@@ -272,6 +275,7 @@ trait prepaid {
      */
     public function responseCode()
     {
+        self::cekPrepaid();
         return array (
             'data' => 
                 array (

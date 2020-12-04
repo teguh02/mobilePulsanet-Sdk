@@ -3,7 +3,7 @@
 use ofi\mobilepulsa\mobilepulsa;
 
 /**
- * Refrensi
+ * Refrensi prepaid
  * https://developer.mobilepulsa.net/documentation#api-Pre_Paid_Flow
  */
 

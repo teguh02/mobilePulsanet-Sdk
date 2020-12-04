@@ -7,11 +7,14 @@ include __DIR__ . '/vendor/autoload.php';
 use ofi\mobilepulsa\mobilepulsa;
 
 /**
- * Import class class contoh (di dalam foder example)
+ * Import class class contoh (di dalam folder example)
  */
 include __DIR__ . '/example/checkBalance.php';
 include __DIR__ . '/example/prepaid.php';
 include __DIR__ . '/example/callbackSample.php';
+
+// Jangan lupa import class postpaid disini
+include __DIR__ . '/example/postpaid.php';
 
 echo "<pre>";
 
@@ -56,7 +59,12 @@ $callbackSample = new callbackSample;
 // print_r($prepaid->cekPelangganPLN());
 
 // mencetak prepaid response kode  
-print_r($prepaid->kodeRespon());
+// print_r($prepaid->kodeRespon());
 
+// @ postpaid section
+$postpaid = new postpaid;
+
+// daftar harga
+print_r($postpaid -> daftarHarga());
 
 echo "</pre>";
