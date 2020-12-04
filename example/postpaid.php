@@ -88,4 +88,16 @@ class postpaid {
          return $this->client->postpaid() -> pricelistPasca($type);
     }
 
+    /**
+     * inquiry / membuat tagihan bpjs (misalkan ingin membayar langsung 2 bulan)
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryBpjs
+     */
+    public function buatTagihanBPJS()
+    {
+        $bpjs_participant_number = "8801234560001";
+        $month = 2;
+        return $this->client->postpaid() -> inquiry() -> inq_BPJS($bpjs_participant_number, $month);
+    }
+
 }

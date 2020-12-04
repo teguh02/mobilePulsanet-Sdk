@@ -14,6 +14,7 @@ use ofi\mobilepulsa\helper\signGenerator;
 trait postpaid {
     
     protected static $postpaid_status = false;
+    protected static $inquiry_status = false;
 
     /**
      * To start postpaid chain method
@@ -53,10 +54,50 @@ trait postpaid {
         return httpRequest::postPostPaid($request,'/api/v1/bill/check/' . $type);
     }
 
+    /**
+     * To start a inquiry chain method
+     * inquiry = membuat tagihan pada pascabayar yang akan dibayar menggunakan fungsi payment
+     */
+    public function inquiry()
+    {
+        self::cekPostpaid();
+        self::$inquiry_status = true;
+        return $this;   
+    }
+
+    /**
+     * To make inquiry bpjs
+     */
+    public function inq_BPJS($bpjs_participant_number, $month = 1, $ref_id = null)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        $order_id = $ref_id ?? $order_id = time();
+        $data = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'code' => "BPJS",
+            'hp' => $bpjs_participant_number,
+            'ref_id' => $order_id,
+            'sign' => signGenerator::generate($order_id),
+            'month' => $month
+        ];
+        return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {
             throw new Exception("Please call postpaid() method first");
+        }
+
+        return true;
+    }
+
+    protected static function cekinquiry()
+    {
+        if(self::$inquiry_status == false) {
+            throw new Exception("Please call inquiry() method first");
         }
 
         return true;

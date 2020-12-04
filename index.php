@@ -68,6 +68,10 @@ $postpaid = new postpaid;
 // print_r($postpaid -> daftarHarga());
 
 // tampilkan daftar harga postpaid (daftar harga bpjs)
-print_r($postpaid -> daftarHargaBPJS());
+// print_r($postpaid -> daftarHargaBPJS());
+
+// # membuat tagihan atau inquiry
+// bpjs
+print_r($postpaid->buatTagihanBPJS());
 
 echo "</pre>";
