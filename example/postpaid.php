@@ -172,4 +172,17 @@ class postpaid {
                              -> inq_PDAM($tv_berlangganan_participant_number, $product_code);
     }
 
+    /**
+     * Membuat tagihan Tv Berlangganan Telkom vision
+     * https://developer.mobilepulsa.net/documentation#api-Inquiry-GetInquiryTVLKMV
+     */
+    public function buatTagihanTvtelkomVision()
+    {
+        $tv_berlangganan_participant_number = "127246500101";
+        $product_code = "TVTLKMV";
+        return $this->client -> postpaid()
+                             -> inquiry()
+                             -> inq_PDAM($tv_berlangganan_participant_number, $product_code);
+    }
+
 }

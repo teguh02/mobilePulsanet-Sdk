@@ -71,12 +71,12 @@ $postpaid = new postpaid;
 // print_r($postpaid -> daftarHargaBPJS());
 
 // # membuat tagihan atau inquiry
-// bpjs
 // print_r($postpaid->buatTagihanBPJS());
 // print_r($postpaid->buatTagihanGasNegara());
 // print_r($postpaid->buatTagihanMULTIFINANCENONFNADIRA());
 // print_r($postpaid->buatTagihanPDAM());
 // print_r($postpaid->buatTagihanPLN());
-print_r($postpaid->buatTagihanTvNontelkomVision());
+// print_r($postpaid->buatTagihanTvNontelkomVision());
+print_r($postpaid->buatTagihanTvtelkomVision());
 
 echo "</pre>";
