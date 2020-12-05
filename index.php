@@ -81,6 +81,9 @@ $postpaid = new postpaid;
 // print_r($postpaid->buatTagihanTelpPasca());
 // print_r($postpaid->buatTagihanInternetNonTelkom());
 // print_r($postpaid->buatTagihanInternetTelkomPSTN());
-print_r($postpaid->buatTagihanEsamsat());
+// print_r($postpaid->buatTagihanEsamsat());
+
+// membayar transaksi dari proses inquiry
+print_r($postpaid->bayarTagihan());
 
 echo "</pre>";

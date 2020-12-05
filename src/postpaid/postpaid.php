@@ -247,6 +247,22 @@ trait postpaid {
         return httpRequest::postPostPaid($data,'/api/v1/bill/check/');
     }
 
+    /**
+     * To pay a inquiry by tr_id
+     * https://developer.mobilepulsa.net/documentation#api-Payment
+     */
+    public function pay($tr_id)
+    {
+        self::cekPostpaid();
+        self::cekinquiry();
+        return httpRequest::postPostPaid([
+            'commands' => 'pay-pasca',
+            'username' => self::$username,
+            'tr_id' => $tr_id,
+            'sign' => signGenerator::generate($tr_id)
+        ],'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {

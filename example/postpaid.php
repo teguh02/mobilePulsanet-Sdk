@@ -253,4 +253,17 @@ class postpaid {
                              -> inq_Esamsat($E_samsat_payment_code, $nomor_identitas, $product_code);
     }
 
+    /**
+     * Membayar suatu transaksi dari proses inquiry
+     * yang sudah dilakukan
+     * https://developer.mobilepulsa.net/documentation#api-Payment
+     */
+    public function bayarTagihan()
+    {
+        $transaction_id_from_inquiry_proccess = "9908429";
+        return $this->client-> postpaid()
+                            -> inquiry()
+                            -> pay($transaction_id_from_inquiry_proccess); 
+    }
+
 }
