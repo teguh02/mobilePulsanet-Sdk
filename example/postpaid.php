@@ -260,7 +260,7 @@ class postpaid {
      */
     public function bayarTagihan()
     {
-        $transaction_id_from_inquiry_proccess = "9908429";
+        $transaction_id_from_inquiry_proccess = "9908430";
         return $this->client-> postpaid()
                             -> inquiry()
                             -> pay($transaction_id_from_inquiry_proccess); 
@@ -273,7 +273,7 @@ class postpaid {
     public function downloadStruk()
     {
         // otomatis akan terdownload menjadi pdf
-        $transaction_id_from_payment_proccess = "9908429";
+        $transaction_id_from_payment_proccess = "9908430";
         return $this->client-> postpaid()
                             -> downloadReceipt($transaction_id_from_payment_proccess); 
     }
