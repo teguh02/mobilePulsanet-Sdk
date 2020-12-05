@@ -263,6 +263,17 @@ trait postpaid {
         ],'/api/v1/bill/check/');
     }
 
+    /**
+     * To download from postpaid pay transaction
+     * https://developer.mobilepulsa.net/documentation#api-Download_receipt
+     */
+    public function downloadReceipt($tr_id)
+    {
+        self::cekPostpaid();
+        $url = self::$baseurl_postpaid .'/api/v1/download/' . $tr_id;
+        return header('Location: '. $url);
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {

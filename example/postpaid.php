@@ -266,4 +266,16 @@ class postpaid {
                             -> pay($transaction_id_from_inquiry_proccess); 
     }
 
+    /**
+     * Download struk dari pembayaran yang sudah dilakukan
+     * https://developer.mobilepulsa.net/documentation#api-Download_receipt
+     */
+    public function downloadStruk()
+    {
+        // otomatis akan terdownload menjadi pdf
+        $transaction_id_from_payment_proccess = "9908429";
+        return $this->client-> postpaid()
+                            -> downloadReceipt($transaction_id_from_payment_proccess); 
+    }
+
 }

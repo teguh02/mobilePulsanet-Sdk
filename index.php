@@ -84,6 +84,9 @@ $postpaid = new postpaid;
 // print_r($postpaid->buatTagihanEsamsat());
 
 // membayar transaksi dari proses inquiry
-print_r($postpaid->bayarTagihan());
+// print_r($postpaid->bayarTagihan());
+
+// download struk dari transaksi yang dilakukan sebelumnya
+print_r($postpaid->downloadStruk());
 
 echo "</pre>";
