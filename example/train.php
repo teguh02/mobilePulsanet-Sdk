@@ -20,6 +20,7 @@ class train {
     }
 
     /**
+     * Pricelist booking kereta
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#kai-price-list
      */
@@ -31,6 +32,7 @@ class train {
     }
 
     /**
+     * Daftar stasiun yang ada
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#kai-price-list
      */
@@ -38,6 +40,20 @@ class train {
     {
         return $this->client -> train()
                              -> stationList();
+    }
+
+    /**
+     * Cari kereta
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#kai-search-train
+     */
+    public function cariKereta()
+    {
+        $org = "GMR"; //Origin Station Code (GAMBIR)
+        $dest = "BD"; //Destination Station Code (BANDUNG)
+        $date = '2019-11-29'; //Departure Date
+        return $this->client -> train()
+                             -> searchTrain($org, $dest, $date);
     }
 
 }

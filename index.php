@@ -98,8 +98,11 @@ $postpaid = new postpaid;
 $train = new train;
 
 // menampilkan daftar harga booking kereta
-print_r($train->daftarHarga());
+// print_r($train->daftarHarga());
 
-// cetak daftar harga
+// tampilkan daftar stasiun
 // print_r($train->daftarStasiunKereta());
+
+// cari kereta
+print_r($train->cariKereta());
 echo "</pre>";
