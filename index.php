@@ -12,9 +12,8 @@ use ofi\mobilepulsa\mobilepulsa;
 include __DIR__ . '/example/checkBalance.php';
 include __DIR__ . '/example/prepaid.php';
 include __DIR__ . '/example/callbackSample.php';
-
-// Jangan lupa import class postpaid disini
 include __DIR__ . '/example/postpaid.php';
+include __DIR__ . '/example/train.php';
 
 echo "<pre>";
 
@@ -93,5 +92,11 @@ $postpaid = new postpaid;
 // print_r($postpaid->cekTransaksi());
 
 // tampilkan semua response code yang ada di postpaid
-print_r($postpaid->responseCode());
+// print_r($postpaid->responseCode());
+
+// @ train section
+$train = new train;
+
+// cetak daftar harga
+print_r($train->daftarHargaKereta());
 echo "</pre>";
