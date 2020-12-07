@@ -17,6 +17,7 @@ include __DIR__ . '/example/train.php';
 
 echo "<pre>";
 
+// @ check balance section
 // untuk mengecek saldo, pertama buat instance baru
 // dari class checkBalance
 $checkBalance = new checkBalance;
@@ -113,6 +114,8 @@ $train = new train;
 // print_r($train->seatMap());
 
 // mengganti seatmap (masih bug)
-print_r($train->gantiSeatMap());
+// print_r($train->gantiSeatMap());
 
+// batalkan pemesanan kereta
+print_r($train->batalkanPemesananKereta());
 echo "</pre>";

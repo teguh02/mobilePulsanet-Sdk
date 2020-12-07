@@ -111,7 +111,7 @@ class train {
     }
 
     /**
-     * Mengganti seatmap
+     * Mengganti seatmap (masih bug)
      * https://developer.mobilepulsa.net/documentation#kai-change-seat
      */
     public function gantiSeatMap()
@@ -121,6 +121,17 @@ class train {
         $newSeatId = '10731852';
         return $this->client -> train()
                              -> changeSeatMap($tr_id, $ticketNumber, $newSeatId);
+    }
+
+    /**
+     * Membatalkan pesanan kereta
+     * https://developer.mobilepulsa.net/documentation#kai-cancel-booking
+     */
+    public function batalkanPemesananKereta()
+    {
+        $tr_id = "41775971";
+        return $this->client -> train()
+                             -> cancelBookingTrain($tr_id);
     }
 
 }

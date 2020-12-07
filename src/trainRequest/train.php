@@ -122,6 +122,21 @@ trait train {
         ], '/api/v1/tiketv2');
     }
 
+    /**
+     * To cancel inquiry from booking train proccess
+     * https://developer.mobilepulsa.net/documentation#kai-cancel-booking
+     */
+    public function cancelBookingTrain($tr_id)
+    {
+        self::cekTrain();
+        return httpRequest::postTrain([
+            'commands' => 'cancel-book',
+            'username' => self::$username,
+            'tr_id' => $tr_id,
+            'sign' => signGenerator::generate($tr_id)
+        ], '/api/v1/tiketv2');
+    }
+
     protected static function cekTrain()
     {
         if(self::$train_status == false) {
