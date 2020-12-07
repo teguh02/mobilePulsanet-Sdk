@@ -120,6 +120,9 @@ $train = new train;
 // print_r($train->batalkanPemesananKereta());
 
 // bayar pemesanan kereta (masih bug)
-print_r($train->bayarPemesananKereta());
+// print_r($train->bayarPemesananKereta());
+
+// menampilkan response code yang ada di section kereta / train
+print_r($train->responseCode());
 
 echo "</pre>";

@@ -152,6 +152,33 @@ trait train {
         ], '/api/v1/tiketv2');
     }
 
+    /**
+     * To print all response code from train section
+     * https://developer.mobilepulsa.net/documentation#api-Response_code_kai
+     */
+    public function trainResponseCode(): array
+    {
+        $response_code = array(
+            array('response_code' => '00', 'description' => 'SUCCESS', 'transaction_status' => 'Success'),
+            array('response_code' => '07', 'description' => 'TRANSAKSI GAGAL', 'transaction_status' => 'Failed'),
+            array('response_code' => '39', 'description' => 'PENDING / TRANSAKSI SEDANG DIPROSES', 'transaction_status' => 'Pending'),
+            array('response_code' => '50', 'description' => 'MASKAPAI TIDAK TERSEDIA', 'transaction_status' => 'Failed'),
+            array('response_code' => '52', 'description' => 'DATA TIDAK LENGKAP / TIDAK VALID', 'transaction_status' => 'Failed'),
+            array('response_code' => '53', 'description' => 'KODE BOOKING TIDAK TERSEDIA', 'transaction_status' => 'Failed'),
+            array('response_code' => '54', 'description' => 'TRANSAKSI TIDAK DAPAT DILAKUKAN. SILAHKAN HUBUNGI CUSTOMER SUPPORT', 'transaction_status' => 'Failed'),
+            array('response_code' => '55', 'description' => 'TIKET SUDAH TERISUED', 'transaction_status' => 'Failed'),
+            array('response_code' => '56', 'description' => 'RUTE DITUTUP', 'transaction_status' => 'Failed'),
+            array('response_code' => '57', 'description' => 'SUBCLASS TIDAK TERSEDIA', 'transaction_status' => 'Failed'),
+            array('response_code' => '58', 'description' => 'RUTE TIDAK TERSEDIA', 'transaction_status' => 'Failed'),
+            array('response_code' => '60', 'description' => 'FARE ID TIDAK DITEMUKAN', 'transaction_status' => 'Failed'),
+            array('response_code' => '61', 'description' => 'PENCARIAN TERJADI KESALAHAN', 'transaction_status' => 'Failed'),
+            array('response_code' => '62', 'description' => 'GAGAL MEMPROSES NOMOR KURSI', 'transaction_status' => 'Failed'),
+            array('response_code' => '103', 'description' => 'TIMEOUT', 'transaction_status' => 'Failed'),
+        );
+
+        return ['data' => $response_code, 'env' => self::$env];
+    }
+
     protected static function cekTrain()
     {
         if(self::$train_status == false) {

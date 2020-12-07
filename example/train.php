@@ -145,4 +145,14 @@ class train {
                              -> bookingPayment($tr_id);
     }
 
+    /**
+     * Menampilkan response code yang ada di section train
+     * https://developer.mobilepulsa.net/documentation#api-Response_code_kai
+     */
+    public function responseCode()
+    {
+        return $this->client -> train()
+                             -> trainResponseCode();
+    }
+
 }
