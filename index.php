@@ -28,7 +28,7 @@ $checkBalance = new checkBalance;
 // Buat instance baru class prepaid
 $prepaid = new prepaid;
 
-// kamu bisa menampilkan hasilnya seperti ini
+// kamu bisa menampilkan hasilnya dengan cara
 // silahkan uncomment saja kode dibawah ini 
 // supaya hasilnya muncul :)
 
