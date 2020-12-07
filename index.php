@@ -92,4 +92,6 @@ $postpaid = new postpaid;
 // cek transaksi postpaid
 // print_r($postpaid->cekTransaksi());
 
+// tampilkan semua response code yang ada di postpaid
+print_r($postpaid->responseCode());
 echo "</pre>";

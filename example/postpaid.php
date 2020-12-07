@@ -291,4 +291,13 @@ class postpaid {
                             -> CheckStatusPostpaid($tr_id); 
     }
 
+    /**
+     * Menampilkan semua response code yang ada di postpaid
+     * https://developer.mobilepulsa.net/documentation#api-Response_code_post
+     */
+    public function responseCode()
+    {
+        return $this->client-> postpaid()
+                            -> responseCodePostpaid();
+    }
 }

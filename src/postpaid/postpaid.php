@@ -289,6 +289,67 @@ trait postpaid {
         ],'/api/v1/bill/check/');
     }
 
+    /**
+     * To print all response code in postpaid
+     * https://developer.mobilepulsa.net/documentation#api-Response_code_post
+     */
+    public function responseCodePostpaid(): array
+    {
+        self::cekPostpaid();
+        $response_code = array(
+            array('response_code' => '00', 'description' => 'PAYMENT / INQUIRY SUCCESS', 'transaction_status' => 'Success'),
+            array('response_code' => '01', 'description' => 'INVOICE HAS BEEN PAID', 'transaction_status' => 'Failed'),
+            array('response_code' => '02', 'description' => 'BILL UNPAID', 'transaction_status' => 'Failed'),
+            array('response_code' => '03', 'description' => 'INVALID REF ID', 'transaction_status' => 'Failed'),
+            array('response_code' => '04', 'description' => 'BILLING ID EXPIRED', 'transaction_status' => 'Failed'),
+            array('response_code' => '05', 'description' => 'UNDEFINED ERROR', 'transaction_status' => 'Pending'),
+            array('response_code' => '06', 'description' => 'INQUIRY ID NOT FOUND', 'transaction_status' => 'Failed'),
+            array('response_code' => '07', 'description' => 'TRANSACTION FAILED', 'transaction_status' => 'Failed'),
+            array('response_code' => '08', 'description' => 'BILLING ID BLOCKED', 'transaction_status' => 'Failed'),
+            array('response_code' => '09', 'description' => 'INQUIRY FAILED', 'transaction_status' => 'Failed'),
+            array('response_code' => '10', 'description' => 'BILL IS NOT AVAILABLE', 'transaction_status' => 'Failed'),
+            array('response_code' => '11', 'description' => 'DUPLICATE REF ID', 'transaction_status' => 'Failed'),
+            array('response_code' => '13', 'description' => 'CUSTOMER NUMBER BLOCKED', 'transaction_status' => 'Failed'),
+            array('response_code' => '14', 'description' => 'INCORRECT DESTINATION NUMBER', 'transaction_status' => 'Failed'),
+            array('response_code' => '15', 'description' => 'NUMBER THAT YOU ENTERED IS NOT SUPPORTED', 'transaction_status' => 'Failed'),
+            array('response_code' => '16', 'description' => 'NUMBER DOESN\'T MATCH THE OPERATOR', 'transaction_status' => 'Failed'),
+            array('response_code' => '17', 'description' => 'BALANCE NOT ENOUGH', 'transaction_status' => 'Failed'),
+            array('response_code' => '20', 'description' => 'PRODUCT UNREGISTERED', 'transaction_status' => 'Failed'),
+            array('response_code' => '30', 'description' => 'PAYMENT HAVE TO BE DONE VIA COUNTER / PDAM', 'transaction_status' => 'Failed'),
+            array('response_code' => '31', 'description' => 'TRANSACTION REJECTED DUE TO EXCEEDING MAXIMAL TOTAL BILL ALLOWED', 'transaction_status' => 'Failed'),
+            array('response_code' => '32', 'description' => 'TRANSACTION FAILED, PLEASE PAY BILL OF ALL PERIOD', 'transaction_status' => 'Failed'),
+            array('response_code' => '33', 'description' => 'TRANSACTION CAN\'T BE PROCESS, PLEASE TRY AGAIN LATER', 'transaction_status' => 'Failed'),
+            array('response_code' => '34', 'description' => 'BILL HAS BEEN PAID', 'transaction_status' => 'Failed'),
+            array('response_code' => '35', 'description' => 'TRANSACTION REJECTED DUE TO ANOTHER UNPAID ARREAR', 'transaction_status' => 'Failed'),
+            array('response_code' => '36', 'description' => 'EXCEEDING DUE DATE, PLEASE PAY IN THE COUNTER / PDAM', 'transaction_status' => 'Failed'),
+            array('response_code' => '37', 'description' => 'PAYMENT FAILED', 'transaction_status' => 'Failed'),
+            array('response_code' => '38', 'description' => 'PAYMENT FAILED, PLEASE DO ANOTHER REQUEST', 'transaction_status' => 'Failed'),
+            array('response_code' => '39', 'description' => 'PENDING / TRANSACTION IN PROCESS', 'transaction_status' => 'Pending'),
+            array('response_code' => '40', 'description' => 'TRANSACTION REJECTED DUE TO ALL OR ONE OF THE ARREAR/INVOICE HAS BEEN PAID', 'transaction_status' => 'Failed'),
+            array('response_code' => '41', 'description' => 'CAN\'T BE PAID IN COUNTER, PLEASE PAY TO THE CORRESPONDING COMPANY', 'transaction_status' => 'Failed'),
+            array('response_code' => '42', 'description' => 'PAYMENT REQUEST HAVEN\'T BEEN RECEIEVED', 'transaction_status' => 'Failed'),
+            array('response_code' => '43', 'description' => 'DATE INTERVAL CANNOT MORE THAN 31 DAYS', 'transaction_status' => 'Failed'),
+            array('response_code' => '91', 'description' => 'DATABASE CONNECTION ERROR', 'transaction_status' => 'Failed'),
+            array('response_code' => '92', 'description' => 'GENERAL ERROR', 'transaction_status' => 'Failed'),
+            array('response_code' => '93', 'description' => 'INVALID AMOUNT', 'transaction_status' => 'Failed'),
+            array('response_code' => '94', 'description' => 'SERVICE HAS EXPIRED', 'transaction_status' => 'Failed'),
+            array('response_code' => '100', 'description' => 'INVALID SIGNATURE', 'transaction_status' => 'Failed'),
+            array('response_code' => '101', 'description' => 'INVALID COMMAND', 'transaction_status' => 'Failed'),
+            array('response_code' => '102', 'description' => 'INVALID IP ADDRESS', 'transaction_status' => 'Failed'),
+            array('response_code' => '103', 'description' => 'TIMEOUT', 'transaction_status' => 'Failed'),
+            array('response_code' => '105', 'description' => 'MISC ERROR / BILLER SYSTEM ERROR', 'transaction_status' => 'Failed'),
+            array('response_code' => '106', 'description' => 'PRODUCT IS TEMPORARILY OUT OF SERVICE', 'transaction_status' => 'Failed'),
+            array('response_code' => '107', 'description' => 'XML FORMAT ERROR', 'transaction_status' => 'Failed'),
+            array('response_code' => '108', 'description' => 'SORRY, YOUR ID CAN\'T BE USED FOR THIS PRODUCT TRANSACTION', 'transaction_status' => 'Failed'),
+            array('response_code' => '109', 'description' => 'SYSTEM CUT OFF', 'transaction_status' => 'Failed'),
+            array('response_code' => '110', 'description' => 'SYSTEM UNDER MAINTENANCE', 'transaction_status' => 'Failed'),
+            array('response_code' => '117', 'description' => 'PAGE NOT FOUND', 'transaction_status' => 'Failed'),
+            array('response_code' => '201', 'description' => 'UNDEFINED RESPONSE CODE', 'transaction_status' => 'Pending'),
+        );
+
+        return ['data' => $response_code, 'env' => self::$env];
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {
