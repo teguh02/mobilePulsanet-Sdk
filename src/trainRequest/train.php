@@ -67,6 +67,27 @@ trait train {
         ], '/api/v1/tiketv2');
     }
 
+    /**
+     * To booking a train
+     * https://developer.mobilepulsa.net/documentation#kai-booking
+     */
+    public function bookingTrain(String $product_code, String $contact_phone, Array $desc, $ref_id = null)
+    {
+        self::cekTrain();
+        $order_id = $ref_id ?? time();
+        $array = [
+            'commands' => 'inq-pasca',
+            'username' => self::$username,
+            'ref_id' => $order_id,
+            'code' => $product_code,
+            'hp' => $contact_phone,
+            'desc' => $desc,
+            'sign' => signGenerator::generate($order_id)
+        ];
+
+        return httpRequest::postTrain($array, '/api/v1/tiketv2');
+    }
+
     protected static function cekTrain()
     {
         if(self::$train_status == false) {

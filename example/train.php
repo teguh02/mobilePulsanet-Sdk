@@ -56,4 +56,46 @@ class train {
                              -> searchTrain($org, $dest, $date);
     }
 
+    /**
+     * Booking kereta api (masih bug)
+     * https://developer.mobilepulsa.net/documentation#kai-booking
+     */
+    public function bookingKereta()
+    {
+        $product_code = "KAI";  
+        $contact_phone = "089655123123";
+        $fareId = "e1839293e40fbb5a4127652547e5d28c086bf40a"; // id from searchtrain  
+        $orderId = 'orderkereta';
+
+        // Deskripsi booking
+        $desc = [
+            'contactName'       => "Teguh Rijanandi",
+            'contactEmail'      => "teguhrijanandi02@gmail.com",
+            'fareId'            => $fareId, // Train Schedule Fare ID 
+            'adult'             => 1, //Number of adult passenger
+
+            // passengger details
+            'passenger'         => [
+                [
+                    'id'        => '003312312344556', // passengger id (No KTP)
+                    'name'      => "Rifqi Alfinur",
+                    'category'  => 'A' //Passenger category (A for adult or I for infant / bayi) 
+                ],
+                [
+                    'id'        => '12312344123',
+                    'name'      => 'Nama Bayi Disini',
+                    'category'  => 'I' // bayi
+                ]
+            ]
+        ];        
+
+        return $this->client -> train()
+                             -> bookingTrain(
+                                 $product_code,
+                                 $contact_phone,
+                                 $desc,
+                                 $orderId
+                                );
+    }
+
 }
