@@ -17,6 +17,6 @@ This SDK are under Construction, for information you can contact me. Thank you
 <ul>
   <li>This sdk refer to mobilepulsa docs https://developer.mobilepulsa.net/documentation</li>
   <li>Please see index.php file here https://github.com/teguh02/mobilePulsanet-Sdk/blob/master/index.php</li>
-  <li>And you can see imported file like this (link menyusul)</li>
+  <li>And you can see imported file like this https://github.com/teguh02/mobilePulsanet-Sdk/blob/20c6684aeebbc2fc3f1db245f9d5bfeddb8c4dbf/index.php#L9-L16</li>
   <li>And you can open one by one all sample files (inside example folder), and you can see all comment foreach methods</li>
 </ul>
