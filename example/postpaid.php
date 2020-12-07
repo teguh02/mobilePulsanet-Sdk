@@ -250,7 +250,7 @@ class postpaid {
         $nomor_identitas = "0212502110170100"; //Registered Identity Number
         return $this->client -> postpaid()
                              -> inquiry()
-                             -> inq_Esamsat($E_samsat_payment_code, $nomor_identitas, $product_code);
+                             -> inq_Esamsat($E_samsat_payment_code, $nomor_identitas, $product_code, 'orderESamsat');
     }
 
     /**
@@ -276,6 +276,19 @@ class postpaid {
         $transaction_id_from_payment_proccess = "9908430";
         return $this->client-> postpaid()
                             -> downloadReceipt($transaction_id_from_payment_proccess); 
+    }
+
+    /**
+     * Cek status dari sebuah transaksi berdasarkan id transaksinya
+     * https://developer.mobilepulsa.net/documentation#api-Check_Status_post
+     */
+    public function cekTransaksi()
+    {
+        // contohnya disini kita ingin memeriksa transaksi
+        // dari method buatTagihanEsamsat() diatas
+        $tr_id = "orderESamsat";
+        return $this->client-> postpaid()
+                            -> CheckStatusPostpaid($tr_id); 
     }
 
 }

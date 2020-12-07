@@ -274,6 +274,21 @@ trait postpaid {
         return header('Location: '. $url);
     }
 
+    /**
+     * To check a transaction status
+     * https://developer.mobilepulsa.net/documentation#api-Check_Status_post
+     */
+    public function CheckStatusPostpaid($ref_id)
+    {
+        self::cekPostpaid();
+        return httpRequest::postPostPaid([
+            'commands' => 'checkstatus',
+            'username' => self::$username,
+            'ref_id' => $ref_id,
+            'sign' => signGenerator::generate('cs')
+        ],'/api/v1/bill/check/');
+    }
+
     protected static function cekPostpaid()
     {
         if(self::$postpaid_status == false) {

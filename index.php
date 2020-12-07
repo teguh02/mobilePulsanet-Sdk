@@ -87,6 +87,9 @@ $postpaid = new postpaid;
 // print_r($postpaid->bayarTagihan());
 
 // download struk dari transaksi yang dilakukan sebelumnya
-print_r($postpaid->downloadStruk());
+// print_r($postpaid->downloadStruk());
+
+// cek transaksi postpaid
+// print_r($postpaid->cekTransaksi());
 
 echo "</pre>";
