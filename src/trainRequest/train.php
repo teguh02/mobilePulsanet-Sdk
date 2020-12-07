@@ -29,6 +29,7 @@ trait train {
      */
     public function priceListBookTrain()
     {
+        self::cekTrain();
         $pricelist = [
             array('product_code' => 'KAI', 'product_name' => 'TIKET KERETA API', 'fee' => '7500', 'commission' => '3500', 'status' => 'active'),
         ];
@@ -100,6 +101,23 @@ trait train {
             'username' => self::$username,
             'tr_id' => $tr_id,
             'ticketNumber' => $ticketNumber,
+            'sign' => signGenerator::generate($tr_id)
+        ], '/api/v1/tiketv2');
+    }
+
+    /**
+     * To change seat map
+     * https://developer.mobilepulsa.net/documentation#api-Seat
+     */
+    public function changeSeatMap($tr_id, $ticketNumber, $newSeatId)
+    {
+        self::cekTrain();
+        return httpRequest::postTrain([
+            'commands' => 'change-seat',
+            'username' => self::$username,
+            'tr_id' => $tr_id,
+            'ticketNumber' => $ticketNumber,
+            'newSeatId' => $newSeatId,
             'sign' => signGenerator::generate($tr_id)
         ], '/api/v1/tiketv2');
     }

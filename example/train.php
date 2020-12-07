@@ -99,7 +99,7 @@ class train {
     }
 
     /**
-     * Untuk menampilkan setmap berdasarkan tiket
+     * Untuk menampilkan setmap berdasarkan tiket (masih bug)
      * https://developer.mobilepulsa.net/documentation#kai-seat-map
      */
     public function seatMap()
@@ -108,6 +108,19 @@ class train {
         $tr_id = "41775971";
         return $this->client -> train()
                              -> seatMap($tr_id, $ticketNumber);
+    }
+
+    /**
+     * Mengganti seatmap
+     * https://developer.mobilepulsa.net/documentation#kai-change-seat
+     */
+    public function gantiSeatMap()
+    {
+        $ticketNumber = "TIKET_2305X2L28TZ1";
+        $tr_id = "41775971";
+        $newSeatId = '10731852';
+        return $this->client -> train()
+                             -> changeSeatMap($tr_id, $ticketNumber, $newSeatId);
     }
 
 }
