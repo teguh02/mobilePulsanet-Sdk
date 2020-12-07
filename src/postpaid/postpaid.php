@@ -73,7 +73,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -94,7 +94,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -114,7 +114,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -134,7 +134,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -154,7 +154,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -174,7 +174,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -194,7 +194,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -214,7 +214,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
@@ -234,7 +234,7 @@ trait postpaid {
     {
         self::cekPostpaid();
         self::cekinquiry();
-        $order_id = $ref_id ?? $order_id = time();
+        $order_id = $ref_id ?? time();
         $data = [
             'commands' => 'inq-pasca',
             'username' => self::$username,
