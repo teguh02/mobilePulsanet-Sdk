@@ -25,7 +25,19 @@ trait train {
     }
 
     /**
-     * To print all train price list
+     * To print all Booking Price List Train
+     */
+    public function priceListBookTrain()
+    {
+        $pricelist = [
+            array('product_code' => 'KAI', 'product_name' => 'TIKET KERETA API', 'fee' => '7500', 'commission' => '3500', 'status' => 'active'),
+        ];
+
+        return ['data' => $pricelist, 'env' => self::$env];
+    }
+
+    /**
+     * To print all train station
      */
     public function stationList()
     {

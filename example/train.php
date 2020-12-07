@@ -23,6 +23,17 @@ class train {
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#kai-price-list
      */
+
+    public function daftarHarga()
+    {
+        return $this->client -> train()
+                             -> priceListBookTrain();
+    }
+
+    /**
+     * Refrensi
+     * https://developer.mobilepulsa.net/documentation#kai-price-list
+     */
     public function daftarStasiunKereta()
     {
         return $this->client -> train()

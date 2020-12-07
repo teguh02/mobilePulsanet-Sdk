@@ -97,6 +97,9 @@ $postpaid = new postpaid;
 // @ train section
 $train = new train;
 
+// menampilkan daftar harga booking kereta
+print_r($train->daftarHarga());
+
 // cetak daftar harga
-print_r($train->daftarStasiunKereta());
+// print_r($train->daftarStasiunKereta());
 echo "</pre>";
