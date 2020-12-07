@@ -27,7 +27,7 @@ trait train {
     /**
      * To print all train price list
      */
-    public function priceListTrain()
+    public function stationList()
     {
         self::cekTrain();
         return httpRequest::postTrain([

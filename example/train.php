@@ -23,10 +23,10 @@ class train {
      * Refrensi
      * https://developer.mobilepulsa.net/documentation#kai-price-list
      */
-    public function daftarHargaKereta()
+    public function daftarStasiunKereta()
     {
         return $this->client -> train()
-                             -> priceListTrain();
+                             -> stationList();
     }
 
 }

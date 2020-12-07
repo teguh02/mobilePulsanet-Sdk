@@ -98,5 +98,5 @@ $postpaid = new postpaid;
 $train = new train;
 
 // cetak daftar harga
-print_r($train->daftarHargaKereta());
+print_r($train->daftarStasiunKereta());
 echo "</pre>";
