@@ -98,4 +98,16 @@ class train {
                                 );
     }
 
+    /**
+     * Untuk menampilkan setmap berdasarkan tiket
+     * https://developer.mobilepulsa.net/documentation#kai-seat-map
+     */
+    public function seatMap()
+    {
+        $ticketNumber = "TIKET_2305X2L28TZ1";
+        $tr_id = "41775971";
+        return $this->client -> train()
+                             -> seatMap($tr_id, $ticketNumber);
+    }
+
 }

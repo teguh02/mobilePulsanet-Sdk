@@ -88,6 +88,22 @@ trait train {
         return httpRequest::postTrain($array, '/api/v1/tiketv2');
     }
 
+    /**
+     * To show all seat map
+     * https://developer.mobilepulsa.net/documentation#api-Seat
+     */
+    public function seatMap($tr_id, $ticketNumber)
+    {
+        self::cekTrain();
+        return httpRequest::postTrain([
+            'commands' => 'seat-map',
+            'username' => self::$username,
+            'tr_id' => $tr_id,
+            'ticketNumber' => $ticketNumber,
+            'sign' => signGenerator::generate($tr_id)
+        ], '/api/v1/tiketv2');
+    }
+
     protected static function cekTrain()
     {
         if(self::$train_status == false) {

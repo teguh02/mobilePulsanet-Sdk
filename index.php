@@ -107,5 +107,7 @@ $train = new train;
 // print_r($train->cariKereta());
 
 // booking tiket kereta (masih bug)
-print_r($train->bookingKereta());
+// print_r($train->bookingKereta());
+
+print_r($train->seatMap());
 echo "</pre>";
