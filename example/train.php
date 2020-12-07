@@ -134,4 +134,15 @@ class train {
                              -> cancelBookingTrain($tr_id);
     }
 
+    /**
+     * Membayar pemesanan kereta (masih bug)
+     * https://developer.mobilepulsa.net/documentation#kai-cancel-booking
+     */
+    public function bayarPemesananKereta()
+    {
+        $tr_id = "41775971";
+        return $this->client -> train()
+                             -> bookingPayment($tr_id);
+    }
+
 }

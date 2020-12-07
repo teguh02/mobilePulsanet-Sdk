@@ -117,5 +117,9 @@ $train = new train;
 // print_r($train->gantiSeatMap());
 
 // batalkan pemesanan kereta
-print_r($train->batalkanPemesananKereta());
+// print_r($train->batalkanPemesananKereta());
+
+// bayar pemesanan kereta (masih bug)
+print_r($train->bayarPemesananKereta());
+
 echo "</pre>";
