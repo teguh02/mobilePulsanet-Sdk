@@ -10,8 +10,8 @@ use ofi\mobilepulsa\helper\callback;
 use ofi\mobilepulsa\postpaid\postpaid;
 use ofi\mobilepulsa\trainRequest\train;
 
-class mobilepulsa {
-
+class mobilepulsa 
+{
     protected static $env;
     protected static $baseurl;
     protected static $baseurl_postpaid;
